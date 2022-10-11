@@ -8,22 +8,31 @@
     <title>Rock Paper Scissors</title>
     <script src="./js/script.js" defer></script>
     <link rel="stylesheet" href="./css/style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-    <button class="choice" id="rock">
-        <img src="./images/rock.png" alt="rock" id="rock">
-    </button>
-    <button class="choice" id="paper">
-        <img src="./images/paper.png" alt="paper" id="paper">
-    </button>
-    <button class="choice" id="scissors">
-        <img src="./images/scissors.png" alt="scissors" id="scissors">
-    </button>
+    <div class="text">
+        <div id="score"></div>
+        <div id="result">NEW GAME! Make your choice!</div>
+    </div>
+    <div class="buttons">
+        <button class="choice" id="rock">
+            <img src="./images/rock.png" alt="rock" id="rock">
+        </button>
+        <button class="choice" id="paper">
+            <img src="./images/paper.png" alt="paper" id="paper">
+        </button>
+        <button class="choice" id="scissors">
+            <img src="./images/scissors.png" alt="scissors" id="scissors">
+        </button>
+    </div>
+<div class="reset-container">
     <button id="reset">Reset</button>
-    <div id="result">NEW GAME! Make your choice!</div>
-    <div id="score"></div>
+</div>
 
 </body>
 
