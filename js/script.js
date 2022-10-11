@@ -16,10 +16,12 @@ function getComputerChoice() {
 
 function playRound(computerSelection, playerSelection) {
     let returnValue;
+    //capitalize first letter of playerSelection
+    playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
     if (computerSelection === playerSelection) {
         returnValue = 'tie';
     }
-    else if (computerSelection === "Rock" && playerSelection === "scissors" || computerSelection === "Scissors" && playerSelection === "paper" || computerSelection === "Paper" && playerSelection === "rock") {
+    else if (computerSelection === "Rock" && playerSelection === "Scissors" || computerSelection === "Scissors" && playerSelection === "Paper" || computerSelection === "Paper" && playerSelection === "Rock") {
         returnValue = 'computer';
     }
     else {
