@@ -53,11 +53,14 @@ buttons.forEach((button) => {
         }
         score.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
         if (playerScore === WIN_SCORE || computerScore === WIN_SCORE) {
-            resetGame();
-            if (playerScore === WIN_SCORE)
+            if (playerScore === WIN_SCORE) {
+                resetGame();
                 score.textContent = 'You won the game!';
-            else
+            }
+            else {
+                resetGame();
                 score.textContent = 'You lost the game!';
+            }
         }
     });
 });
