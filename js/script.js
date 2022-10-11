@@ -15,19 +15,14 @@ function getComputerChoice() {
 }
 
 function playRound(computerSelection, playerSelection) {
-    playerSelection = playerSelection.toLowerCase();
-    playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
     let returnValue;
     if (computerSelection === playerSelection) {
-        //returnValue = "It's a tie!";
         returnValue = 'tie';
     }
-    else if (computerSelection === "Rock" && playerSelection === "Scissors" || computerSelection === "Scissors" && playerSelection === "Paper" || computerSelection === "Paper" && playerSelection === "Rock") {
-        //returnValue = `You lost! ${computerSelection} beats ${playerSelection}!`;
+    else if (computerSelection === "Rock" && playerSelection === "scissors" || computerSelection === "Scissors" && playerSelection === "paper" || computerSelection === "Paper" && playerSelection === "rock") {
         returnValue = 'computer';
     }
     else {
-        //returnValue = `You win! ${playerSelection} beats ${computerSelection}!`;
         returnValue = 'player';
     }
     return returnValue;
@@ -42,16 +37,17 @@ const WIN_SCORE = 5;
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         let comChoice = getComputerChoice();
+
         switch (playRound(comChoice, button.id)) {
             case 'tie':
                 result.textContent = "It's a tie!";
                 break;
             case 'computer':
-                result.textContent = `You lost! ${comChoice} beats ${button.id}!`;
+                result.textContent = `You lost! ${comChoice} beats ${button.id.charAt(0).toUpperCase() + button.id.slice(1)}!`;
                 computerScore++;
                 break;
             case 'player':
-                result.textContent = `You win! ${button.id} beats ${comChoice}!`;
+                result.textContent = `You win! ${button.id.charAt(0).toUpperCase() + button.id.slice(1)} beats ${comChoice}!`;
                 playerScore++;
                 break;
         }
